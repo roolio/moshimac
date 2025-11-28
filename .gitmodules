@@ -1,0 +1,3 @@
+[submodule "Vendor/moshi-swift"]
+	path = Vendor/moshi-swift
+	url = https://github.com/kyutai-labs/moshi-swift
