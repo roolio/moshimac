@@ -45,6 +45,12 @@ else
     echo "⚠️  Warning: MLX Metal bundle not found at $MLX_BUNDLE"
 fi
 
+# Copy app icon
+if [ -f "Sources/MoshiMac/Resources/AppIcon.icns" ]; then
+    cp "Sources/MoshiMac/Resources/AppIcon.icns" "$CONTENTS/Resources/"
+    echo "Copied app icon"
+fi
+
 # Fix dylib path in executable
 install_name_tool -change "librustymimi_c.dylib" "@executable_path/../Frameworks/librustymimi_c.dylib" "$CONTENTS/MacOS/$APP_NAME" 2>/dev/null || true
 
@@ -68,6 +74,8 @@ cat > "$CONTENTS/Info.plist" << 'EOF'
     <string>1.0</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>LSUIElement</key>
