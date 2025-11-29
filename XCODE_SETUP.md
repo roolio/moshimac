@@ -4,7 +4,7 @@
 
 ### 1. Ouvrir le projet dans Xcode
 ```bash
-cd /Users/julien.laugel/Dropbox/code/moshimac
+cd /moshimac
 open Package.swift
 ```
 

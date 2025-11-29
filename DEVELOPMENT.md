@@ -136,7 +136,7 @@ class ModelManager {
 ### 4. Build & Test
 
 ```bash
-cd /Users/julien.laugel/Dropbox/code/moshimac
+cd moshimac
 make setup
 make build
 make run

@@ -64,7 +64,7 @@ moshimac/
 ### Étape 1 : Vérifier le Setup
 
 ```bash
-cd /Users/julien.laugel/Dropbox/code/moshimac
+cd /moshimac
 
 # Vérifier que le submodule est bien initialisé
 ls -la Vendor/moshi-swift/
@@ -133,7 +133,7 @@ make xcode
 Pour vérifier que tout est bien en place :
 
 ```bash
-cd /Users/julien.laugel/Dropbox/code/moshimac
+cd moshimac
 
 # Liste les fichiers Swift créés
 find Sources -name "*.swift"

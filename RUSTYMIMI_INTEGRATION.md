@@ -84,7 +84,7 @@ Transcription finale
 ## 🔨 Build depuis Xcode
 
 ```bash
-cd /Users/julien.laugel/Dropbox/code/moshimac
+cd moshimac
 open Package.swift
 ```
 
