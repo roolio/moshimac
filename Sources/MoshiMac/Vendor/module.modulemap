@@ -1,0 +1,5 @@
+module rustymimi {
+    header "rustymimi.h"
+    link "rustymimi_c"
+    export *
+}

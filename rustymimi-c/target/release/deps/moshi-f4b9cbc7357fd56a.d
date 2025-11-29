@@ -1,0 +1,24 @@
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/moshi-f4b9cbc7357fd56a.d: /tmp/moshi-repo/rust/moshi-core/src/lib.rs /tmp/moshi-repo/rust/moshi-core/src/asr.rs /tmp/moshi-repo/rust/moshi-core/src/batched_transformer.rs /tmp/moshi-repo/rust/moshi-core/src/conditioner.rs /tmp/moshi-repo/rust/moshi-core/src/conv.rs /tmp/moshi-repo/rust/moshi-core/src/kv_cache.rs /tmp/moshi-repo/rust/moshi-core/src/lm.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate_multistream.rs /tmp/moshi-repo/rust/moshi-core/src/mimi.rs /tmp/moshi-repo/rust/moshi-core/src/nn.rs /tmp/moshi-repo/rust/moshi-core/src/quantization.rs /tmp/moshi-repo/rust/moshi-core/src/seanet.rs /tmp/moshi-repo/rust/moshi-core/src/streaming.rs /tmp/moshi-repo/rust/moshi-core/src/transformer.rs /tmp/moshi-repo/rust/moshi-core/src/tts.rs /tmp/moshi-repo/rust/moshi-core/src/tts_streaming.rs /tmp/moshi-repo/rust/moshi-core/src/wav.rs
+
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/libmoshi-f4b9cbc7357fd56a.rlib: /tmp/moshi-repo/rust/moshi-core/src/lib.rs /tmp/moshi-repo/rust/moshi-core/src/asr.rs /tmp/moshi-repo/rust/moshi-core/src/batched_transformer.rs /tmp/moshi-repo/rust/moshi-core/src/conditioner.rs /tmp/moshi-repo/rust/moshi-core/src/conv.rs /tmp/moshi-repo/rust/moshi-core/src/kv_cache.rs /tmp/moshi-repo/rust/moshi-core/src/lm.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate_multistream.rs /tmp/moshi-repo/rust/moshi-core/src/mimi.rs /tmp/moshi-repo/rust/moshi-core/src/nn.rs /tmp/moshi-repo/rust/moshi-core/src/quantization.rs /tmp/moshi-repo/rust/moshi-core/src/seanet.rs /tmp/moshi-repo/rust/moshi-core/src/streaming.rs /tmp/moshi-repo/rust/moshi-core/src/transformer.rs /tmp/moshi-repo/rust/moshi-core/src/tts.rs /tmp/moshi-repo/rust/moshi-core/src/tts_streaming.rs /tmp/moshi-repo/rust/moshi-core/src/wav.rs
+
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/libmoshi-f4b9cbc7357fd56a.rmeta: /tmp/moshi-repo/rust/moshi-core/src/lib.rs /tmp/moshi-repo/rust/moshi-core/src/asr.rs /tmp/moshi-repo/rust/moshi-core/src/batched_transformer.rs /tmp/moshi-repo/rust/moshi-core/src/conditioner.rs /tmp/moshi-repo/rust/moshi-core/src/conv.rs /tmp/moshi-repo/rust/moshi-core/src/kv_cache.rs /tmp/moshi-repo/rust/moshi-core/src/lm.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate.rs /tmp/moshi-repo/rust/moshi-core/src/lm_generate_multistream.rs /tmp/moshi-repo/rust/moshi-core/src/mimi.rs /tmp/moshi-repo/rust/moshi-core/src/nn.rs /tmp/moshi-repo/rust/moshi-core/src/quantization.rs /tmp/moshi-repo/rust/moshi-core/src/seanet.rs /tmp/moshi-repo/rust/moshi-core/src/streaming.rs /tmp/moshi-repo/rust/moshi-core/src/transformer.rs /tmp/moshi-repo/rust/moshi-core/src/tts.rs /tmp/moshi-repo/rust/moshi-core/src/tts_streaming.rs /tmp/moshi-repo/rust/moshi-core/src/wav.rs
+
+/tmp/moshi-repo/rust/moshi-core/src/lib.rs:
+/tmp/moshi-repo/rust/moshi-core/src/asr.rs:
+/tmp/moshi-repo/rust/moshi-core/src/batched_transformer.rs:
+/tmp/moshi-repo/rust/moshi-core/src/conditioner.rs:
+/tmp/moshi-repo/rust/moshi-core/src/conv.rs:
+/tmp/moshi-repo/rust/moshi-core/src/kv_cache.rs:
+/tmp/moshi-repo/rust/moshi-core/src/lm.rs:
+/tmp/moshi-repo/rust/moshi-core/src/lm_generate.rs:
+/tmp/moshi-repo/rust/moshi-core/src/lm_generate_multistream.rs:
+/tmp/moshi-repo/rust/moshi-core/src/mimi.rs:
+/tmp/moshi-repo/rust/moshi-core/src/nn.rs:
+/tmp/moshi-repo/rust/moshi-core/src/quantization.rs:
+/tmp/moshi-repo/rust/moshi-core/src/seanet.rs:
+/tmp/moshi-repo/rust/moshi-core/src/streaming.rs:
+/tmp/moshi-repo/rust/moshi-core/src/transformer.rs:
+/tmp/moshi-repo/rust/moshi-core/src/tts.rs:
+/tmp/moshi-repo/rust/moshi-core/src/tts_streaming.rs:
+/tmp/moshi-repo/rust/moshi-core/src/wav.rs:

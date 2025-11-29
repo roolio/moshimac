@@ -1,0 +1,10 @@
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/safetensors-7f85b59b45e64aab.d: /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/lib.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/slice.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/tensor.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/../README.md
+
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/libsafetensors-7f85b59b45e64aab.rlib: /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/lib.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/slice.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/tensor.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/../README.md
+
+/Users/julien.laugel/Dropbox/code/moshimac/rustymimi-c/target/release/deps/libsafetensors-7f85b59b45e64aab.rmeta: /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/lib.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/slice.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/tensor.rs /Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/../README.md
+
+/Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/lib.rs:
+/Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/slice.rs:
+/Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/tensor.rs:
+/Users/julien.laugel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/safetensors-0.4.5/src/../README.md:

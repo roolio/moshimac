@@ -36,6 +36,7 @@ let package = Package(
                 .product(name: "MLXRandom", package: "mlx-swift"),
                 .product(name: "MLXOptimizers", package: "mlx-swift"),
                 .product(name: "MLXFFT", package: "mlx-swift"),
+                .product(name: "MLXFast", package: "mlx-swift"),
                 "KeyboardShortcuts",
                 "LaunchAtLogin",
                 .product(name: "Transformers", package: "swift-transformers"),
@@ -43,6 +44,10 @@ let package = Package(
             path: "Sources/MoshiMac",
             resources: [
                 .process("Resources")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-L", "Sources/MoshiMac/Resources/lib"]),
+                .linkedLibrary("rustymimi_c")
             ]
         ),
         .testTarget(
