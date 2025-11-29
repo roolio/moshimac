@@ -161,14 +161,6 @@ Managed via Swift Package Manager:
 - `KeyboardShortcuts` (global hotkeys)
 - `LaunchAtLogin` (optional auto-start)
 
-## 🤝 Contributing
-
-Contributions are welcome! Areas for improvement:
-- [ ] Support for additional languages
-- [ ] Voice Activity Detection (VAD) integration
-- [ ] Auto-punctuation improvements
-- [ ] Custom model support
-- [ ] Performance optimizations
 
 ## 📄 License
 
