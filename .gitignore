@@ -60,6 +60,9 @@ Models/
 *.bin
 *.gguf
 
+# Compiled libraries
+*.a
+
 # IDE
 .vscode/
 .idea/
