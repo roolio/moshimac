@@ -33,6 +33,9 @@ class RecordingSession: ObservableObject {
             return
         }
 
+        // Reset engine state before starting
+        sttEngine.reset()
+
         state = .recording
         transcript = ""
         duration = 0

@@ -4,6 +4,7 @@
 import AppKit
 import SwiftUI
 import AVFoundation
+import Combine
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem?
@@ -11,6 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var hotkeyManager: HotkeyManager?
     private var sttEngine: STTEngine?
     private var overlayWindow: NSWindow?
+    private var cancellables = Set<AnyCancellable>()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Hide from Dock
@@ -22,6 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Initialize STT engine
         sttEngine = STTEngine()
         recordingSession = RecordingSession(sttEngine: sttEngine!)
+
+        // Observe recording state changes to show/hide overlay
+        observeRecordingState()
 
         // Setup global hotkeys
         hotkeyManager = HotkeyManager(recordingSession: recordingSession!)
@@ -36,6 +41,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Request microphone permission
         requestMicrophonePermission()
 
+        // Check accessibility permissions
+        checkAccessibilityPermissions()
+
         print("MoshiMac started successfully")
     }
 
@@ -43,8 +51,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
         if let button = statusItem?.button {
-            button.image = NSImage(systemSymbolName: "mic.circle", accessibilityDescription: "MoshiMac")
-            button.image?.isTemplate = true
+            // Try SF Symbol first, fallback to text
+            if let image = NSImage(systemSymbolName: "mic.circle", accessibilityDescription: "MoshiMac") {
+                button.image = image
+                button.image?.isTemplate = true
+            } else {
+                // Fallback to text icon
+                button.title = "🎙"
+            }
         }
 
         let menu = NSMenu()
@@ -62,6 +76,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem(title: "Quit MoshiMac", action: #selector(quit), keyEquivalent: "q"))
 
         statusItem?.menu = menu
+    }
+
+    private func observeRecordingState() {
+        Task { @MainActor in
+            guard let recordingSession = recordingSession else { return }
+
+            recordingSession.$state
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] state in
+                    guard let self = self else { return }
+
+                    switch state {
+                    case .recording, .processing:
+                        if self.overlayWindow == nil {
+                            self.showRecordingOverlay()
+                        }
+                    case .idle, .done, .error:
+                        self.hideRecordingOverlay()
+                    }
+                }
+                .store(in: &self.cancellables)
+        }
     }
 
     private func updateMenuBarIcon(ready: Bool) {
@@ -95,9 +131,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    private func checkAccessibilityPermissions() {
+        // Check if we have accessibility permissions
+        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
+        let trusted = AXIsProcessTrustedWithOptions(options)
+
+        if !trusted {
+            print("⚠️  Accessibility permissions not granted")
+            print("   MoshiMac will copy text to clipboard instead of pasting directly")
+            print("   Enable in: System Settings > Privacy & Security > Accessibility")
+        } else {
+            print("✅ Accessibility permissions granted")
+        }
+    }
+
     @objc private func openSettings() {
-        // TODO: Implement settings window
-        print("Settings not implemented yet")
+        let settingsView = SettingsWindow()
+        let hostingController = NSHostingController(rootView: settingsView)
+
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 500, height: 400),
+            styleMask: [.titled, .closable, .resizable],
+            backing: .buffered,
+            defer: false
+        )
+
+        window.title = "MoshiMac Settings"
+        window.contentViewController = hostingController
+        window.center()
+        window.makeKeyAndOrderFront(nil)
+
+        // Activate the app to bring window to front
+        NSApp.activate(ignoringOtherApps: true)
     }
 
     @objc private func quit() {
@@ -118,6 +183,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.backgroundColor = .clear
         window.level = .floating
         window.collectionBehavior = [.canJoinAllSpaces, .stationary]
+        window.isReleasedWhenClosed = false
 
         let contentView = RecordingOverlay(session: recordingSession!)
         window.contentView = NSHostingView(rootView: contentView)
@@ -131,7 +197,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.setFrameOrigin(NSPoint(x: x, y: y))
         }
 
-        window.makeKeyAndOrderFront(nil)
+        window.orderFrontRegardless()
         overlayWindow = window
     }
 

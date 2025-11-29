@@ -23,27 +23,28 @@ class TextInserter {
     }
 
     private func pasteText(_ text: String) async -> Bool {
-        // First, check if we have accessibility permissions
-        guard AXIsProcessTrusted() else {
-            print("Accessibility permissions not granted")
-            await requestAccessibilityPermissions()
-            return false
-        }
-
-        // Copy to clipboard
+        // Copy to clipboard first
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(text, forType: .string)
+
+        // Check if we have accessibility permissions
+        let hasPermissions = AXIsProcessTrusted()
+        if !hasPermissions {
+            print("⚠️  Accessibility permissions not granted - text copied to clipboard")
+            print("   Enable accessibility in System Settings > Privacy & Security > Accessibility")
+            // Still try to paste, sometimes it works
+        }
 
         // Small delay to ensure clipboard is updated
         try? await Task.sleep(nanoseconds: 50_000_000) // 50ms
 
-        // Simulate Cmd+V to paste
+        // Try to simulate Cmd+V to paste
         let success = simulatePaste()
 
         if success {
-            print("Text pasted successfully")
+            print("✅ Text pasted successfully")
         } else {
-            print("Failed to paste text")
+            print("⚠️  Paste simulation failed - text is in clipboard")
         }
 
         return success
